@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Html, useGLTF } from '@react-three/drei'
 import { Suspense, useEffect, useState } from 'react'
 
+
 export default function Laptop() {
 
   return (
@@ -33,6 +34,25 @@ export function Model(props: any) {
 
 
 function Scena() {
+  const target = new Date('2025-05-30T20:00:00');
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const diff = target.getTime() - now.getTime();
+  let countdown;
+  if (diff <= 0) {
+    countdown = "🥳🥳🥳";
+  } else {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    countdown = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
 
   return (
     <group scale={[1, 1, 1]}>
@@ -68,22 +88,7 @@ function Scena() {
                 <div className='text-center text-shadow-black text-shadow-lg'>
                     <p className='text-sm'>###agenda party!!!</p>
                     <h1 className="font-bold">
-
-                        {(() => {
-                            const target = new Date('2025-05-30T20:00:00');
-                            const [now, setNow] = useState(new Date());
-                            useEffect(() => {
-                                const interval = setInterval(() => setNow(new Date()), 1000);
-                                return () => clearInterval(interval);
-                            }, []);
-                            const diff = target.getTime() - now.getTime();
-                            if (diff <= 0) return "🥳🥳🥳";
-                            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                            const seconds = Math.floor((diff / 1000) % 60);
-                            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                        })()}
+                        {countdown}
                     </h1>
                     <a href='https://evently.pl/events/8334-agenda-party' target='about'><button className='bg-black text-white rounded-md p-1 text-[5px] hover:opacity-60 ease-in-out transition-all cursor-pointer'>click here to buy ticket</button></a>
                 </div>
