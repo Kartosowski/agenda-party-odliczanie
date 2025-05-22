@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Monitor
+* source:	https://sketchfab.com/3d-models/old-monitor-9748cdcaf09c4a1bbe4ffe1e7b4bfd52
+* author:	Daniyal Malik (https://sketchfab.com/daniyalmalik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Monitor" (https://sketchfab.com/3d-models/old-monitor-9748cdcaf09c4a1bbe4ffe1e7b4bfd52) by Daniyal Malik (https://sketchfab.com/daniyalmalik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
