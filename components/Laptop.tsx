@@ -2,6 +2,7 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Html, useGLTF } from '@react-three/drei'
 import { Suspense, useEffect, useState } from 'react'
+import type * as React from 'react';
 
 
 export default function Laptop() {
@@ -26,7 +27,9 @@ export default function Laptop() {
 
 
 
-export function Model(props: any) {
+
+
+export function Model(props: React.JSX.IntrinsicElements["group"]) {
   const gltf = useGLTF('/models/scene.gltf')
 
   return <primitive object={gltf.scene} {...props} />
